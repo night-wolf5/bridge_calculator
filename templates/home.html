@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bridge Calculator </h1>
+    <p id="nil"> </p>
+    <form name="robre" action="calculate" class="form grey-bloc" method="GET" style="padding: 5px 15px 15px 15px; border:1px solid #D5D5D5; border-radius:5px;">
+                            <h3>Contract</h3>
+                            <div class="row">
+                                <p id="demo"></p>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <select name="Teams" class="form-control">
+                                            <option value="Team1">Team1</option>
+                                            <option value="Team2">Team2</option>
+                                        </select>
+                                        <br>
+                                        <select name="contrat1" class="form-control" onchange="updateLevees();">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <select name="contrat2" class="form-control" onchange="calculMarque();">
+                                            <option value="N">Notrump</option>
+                                            <option value="S">Spade</option>
+                                            <option value="H">Heart</option>
+                                            <option value="D">Diamond</option>
+                                            <option value="C">Club</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label for="vulnerable">
+                                                &nbsp; <input type="checkbox" name="vulnerable" value="y" id="vulnerable" onchange="calculMarque();">
+                                                Vulnerable?
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <select name="contrat3" class="form-control" id="contrat3">
+                                            <option value="">Not doubled</option>
+                                            <option value="X1">Doubled</option>
+                                            <option value="X2">Redoubled</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3>Tricks</h3>
+                            <select name="levees" class="form-control" onchange="calculMarque();">
+                           <option value="-9">-9</option><option value="-8">-8</option><option value="-7">-7</option><option value="-6">-6</option><option value="-5">-5</option><option value="-4">-4</option><option value="-3">-3</option><option value="-2">-2</option><option value="-1">-1</option><option value="0" selected="">=</option><option value="1">+1</option><option value="2">+2</option><option value="3">+3</option><option value="4">+4</option></select>
+                            <!--<div class="bloc-section">
+                                <a class="action-btn col-md-12" onclick="calculMarque(); return false;">
+                                    Calculate
+                                </a>
+                            </div>-->
+                            <input type="submit" value="OK" id="send">
+
+                            <br>
+                            <div class="well">
+                                <h3 id="score" class="text-center">530 points</h3>
+                                <input type="text" id="field" />
+                            </div>
+                        </form>
+                        <form action="new_game" method="POST">
+                            {% csrf_token %}
+                            <input  type="submit" value="New Game">
+                        </form>
+                        <form action="undo" method="POST">
+                            {% csrf_token %}
+                            <input  type="submit" value="Undo">
+                        </form>
+                        <h1>Team1  {{Team1}}</h1>
+                        <h1>Team2  {{Team2}}</h1>
+</body>
+<script>
+    const field = document.getElementById("field");
+    const button = document.getElementById("send");
+    let parent = null;
+    button.addEventListener("click", () => {
+        if(parent === null) {
+
+        }
+    
+        const text = field.value;
+        parent.postMessage(text, "*");
+        //window.top.postMessage(text, "*");
+    });
+    const text = field.value;
+    //parent.postMessage(text);
+    if(parent == null){
+
+    }
+    if(parent !=null){
+
+    }
+    console.log('abra');
+    window.addEventListener("message", ({ data, source }) => {
+        // if we don't have a reference to the parent window yet, set it now
+        if (parent === null) {
+          parent = source;
+          console.log('parent set');
+          console.log(JSON.stringify(data));
+    }
+    console.log(data);
+    }
+    )
+    ;
+</script>
+
+</html>
