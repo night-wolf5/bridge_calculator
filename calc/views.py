@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import game
 # Create your views here.
 gam = None
+print('page load')
 def home(request):
     global gam
     gam = game()
