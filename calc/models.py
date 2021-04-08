@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class game():
+    print('object created')
     score = 0
     Team_1 = 0
     Team_2 = 0
