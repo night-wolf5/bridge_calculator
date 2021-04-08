@@ -17,7 +17,7 @@ def calculate(request):
         calls = req_values['contrat1']
         extra_tricks = req_values['levees']
         typee = req_values['contrat3']
-        print('game type', type(gam))
+        print('game type1', type(gam))
         score = gam.calc(house, calls, extra_tricks,typee)
         gam.last_score = score
         #print(req_values['contrat1'], calls)
@@ -30,6 +30,7 @@ def calculate(request):
         print('Team1',gam.Team_1)
         print('Team2',gam.Team_2)
         gam.current_team = team
+        print('game type2', type(gam))
     return render(request,'home.html',{'Team1':gam.Team_1, 'Team2':gam.Team_2})
 
 def new_game(request):
