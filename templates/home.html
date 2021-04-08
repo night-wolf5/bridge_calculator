@@ -94,39 +94,4 @@
                         <h1>Team1  {{Team1}}</h1>
                         <h1>Team2  {{Team2}}</h1>
 </body>
-<script>
-    const field = document.getElementById("field");
-    const button = document.getElementById("send");
-    let parent = null;
-    button.addEventListener("click", () => {
-        if(parent === null) {
-
-        }
-    
-        const text = field.value;
-        parent.postMessage(text, "*");
-        //window.top.postMessage(text, "*");
-    });
-    const text = field.value;
-    //parent.postMessage(text);
-    if(parent == null){
-
-    }
-    if(parent !=null){
-
-    }
-    console.log('abra');
-    window.addEventListener("message", ({ data, source }) => {
-        // if we don't have a reference to the parent window yet, set it now
-        if (parent === null) {
-          parent = source;
-          console.log('parent set');
-          console.log(JSON.stringify(data));
-    }
-    console.log(data);
-    }
-    )
-    ;
-</script>
-
 </html>
