@@ -4,8 +4,8 @@ from .models import game
 gam = game()
 print('page load')
 def home(request):
-    global gam
-    gam = game()
+    #global gam
+    #gam = game()
     return render(request,'home.html')
 
 def calculate(request):
