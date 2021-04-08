@@ -9,6 +9,7 @@ def home(request):
     return render(request,'home.html')
 
 def calculate(request):
+    global gam
     req_values = (request.GET)
     if req_values:
         team = req_values['Teams']
@@ -39,6 +40,7 @@ def new_game(request):
 
 def undo(request):
     #team = req_values['Teams']
+    global gam
     if gam.current_team == "Team1":
         gam.Team_1 = gam.Team_1 - gam.last_score
     
