@@ -109,6 +109,7 @@ class game():
         return score
     
     def Team_1_score(self, score):
+        print('before calc1',self.Team_1)
         print('self.Team_1: ',self.Team_1, '+ score :', score)
         self.Team_1 = self.Team_1 + score
         print('after calc1',self.Team_1)
