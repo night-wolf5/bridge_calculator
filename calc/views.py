@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import game
+from .classes import game
 # Create your views here.
 gam = game()
 print('page load')
