@@ -108,7 +108,9 @@ class game():
         return score
     
     def Team_1_score(self, score):
+        print('self.Team_1: ',self.Team_1, '+ score :', score)
         self.Team_1 = self.Team_1 + score
 
     def Team_2_score(self, score):
+        print('self.Team_2: ',self.Team_2, '+ score :', score)
         self.Team_2 = self.Team_2 + score

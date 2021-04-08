@@ -22,9 +22,9 @@ def calculate(request):
         elif team == 'Team2':
             gam.Team_2_score(score)
         
-        print(score)
-        print(gam.Team_1)
-        print(gam.Team_2)
+        print('score',score)
+        print('Team1',gam.Team_1)
+        print('Team2',gam.Team_2)
         gam.current_team = team
     return render(request,'home.html',{'Team1':gam.Team_1, 'Team2':gam.Team_2})
 
