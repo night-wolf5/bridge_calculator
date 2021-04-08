@@ -3,9 +3,10 @@ from django.db import models
 # Create your models here.
 class game():
     print('object created')
-    score = 0
-    Team_1 = 0
-    Team_2 = 0
+    def __init__(self):
+        self.score = 0
+        self.Team_1 = 0
+        self.Team_2 = 0
     class rules:
         current_team = ''
         last_score = 0
