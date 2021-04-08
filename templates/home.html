@@ -12,7 +12,7 @@
 <body>
     <h1>Bridge Calculator </h1>
     <p id="nil"> </p>
-    <form name="robre" action="calculate" class="form grey-bloc" method="GET" style="padding: 5px 15px 15px 15px; border:1px solid #D5D5D5; border-radius:5px;">
+    <form name="robre" action="calculate" class="form grey-bloc" method="GET" style="padding: 5px 15px 15px 15px; border:1px solid #D5D5D5; border-radius:5px;" >
                             <h3>Contract</h3>
                             <div class="row">
                                 <p id="demo"></p>
@@ -75,7 +75,7 @@
                                     Calculate
                                 </a>
                             </div>-->
-                            <input type="button" value="OK" id="send">
+                            <input type="submit" value="OK" id="send">
 
                             <br>
                             <div class="well">
@@ -93,5 +93,11 @@
                         </form>
                         <h1>Team1  {{Team1}}</h1>
                         <h1>Team2  {{Team2}}</h1>
+            
+<script>
+    $("#robre").submit(function(e) {
+        e.preventDefault();
+    });    
+</script>
 </body>
 </html>
