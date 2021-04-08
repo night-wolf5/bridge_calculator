@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from .models import game
 # Create your views here.
-gam = game()
+gam = None
 def home(request):
-
+    global gam
+    gam = game()
     return render(request,'home.html')
 
 def calculate(request):

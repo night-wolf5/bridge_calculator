@@ -2,7 +2,6 @@ from django.db import models
 
 # Create your models here.
 class game():
-    print('object created')
     def __init__(self):
         self.score = 0
         self.Team_1 = 0
@@ -112,7 +111,11 @@ class game():
     def Team_1_score(self, score):
         print('self.Team_1: ',self.Team_1, '+ score :', score)
         self.Team_1 = self.Team_1 + score
+        print('after calc1',self.Team_1)
 
     def Team_2_score(self, score):
         print('self.Team_2: ',self.Team_2, '+ score :', score)
         self.Team_2 = self.Team_2 + score
+        print('after calc2',self.Team_2)
+
+
