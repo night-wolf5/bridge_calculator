@@ -36,7 +36,7 @@ def new_game(request):
     global gam
     del gam
     #gam = game()
-    print('gam')
+    print(gam)
     return render(request,'home.html')
 
 def undo(request):
