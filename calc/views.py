@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from .classes import game
+from .classes import gam
 # Create your views here.
-gam = game()
+
 print('page load')
 def home(request):
     #global gam
@@ -9,7 +9,6 @@ def home(request):
     return render(request,'home.html')
 
 def calculate(request):
-    global gam
     req_values = (request.GET)
     if req_values:
         team = req_values['Teams']
@@ -36,7 +35,7 @@ def calculate(request):
 def new_game(request):
     global gam
     del gam
-    gam = game()
+    #gam = game()
     print('gam')
     return render(request,'home.html')
 

@@ -115,3 +115,5 @@ class game():
         print('self.Team_2: ',self.Team_2, '+ score :', score)
         self.Team_2 = self.Team_2 + score
         print('after calc2',self.Team_2)
+
+gam = game()
