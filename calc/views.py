@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import game
 # Create your views here.
-gam = None
+gam = game()
 print('page load')
 def home(request):
     global gam
